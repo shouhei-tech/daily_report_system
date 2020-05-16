@@ -36,7 +36,6 @@ public class EmployeeValidator {
             return "社員番号を入力してください";
         }
 
-        // すでに社員番号が登録されている場合
         if(code_duplicate_check_flag) {
             EntityManager em = DBUtil.createEntityManager();
             long employees_count = em.createNamedQuery("checkRegisteredCode", Long.class)
